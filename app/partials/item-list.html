@@ -1,0 +1,14 @@
+<div class="starter-template" ng-controller="ItemListCtrl">
+  <h1>Movies</h1>
+  <p class="lead">Let's all go to the movies</p>
+  <div>
+    <ul class="item-list">
+      <li ng-repeat="movie in movies">
+        <a href="#/movies/{{movie.id}}">
+          <h1>{{movie.name}}</h1>
+          <span>Directed By: {{movie.director}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

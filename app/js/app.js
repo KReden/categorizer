@@ -8,10 +8,10 @@ var catagorizerApp = angular.module('app', [
 catagorizerApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
     controller: 'HomeCtrl'
-  }).when('/movies', {
+  }).when('/:category', {
     templateUrl: 'partials/movies.html',
     // controller: 'MovieListCtrl'
-  }).when('/movies/:id', {
+  }).when('/:category/:id', {
     templateUrl: 'partials/movie-detail.html',
     controller: 'MovieDetailCtrl'
   }).otherwise({

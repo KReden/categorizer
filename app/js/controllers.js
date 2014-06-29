@@ -21,12 +21,19 @@ catagorizerControllers.controller('MovieListCtrl', ['Movie', '$scope', function(
 }]);
 
 catagorizerControllers.controller('MovieDetailCtrl', ['Movie', '$scope', '$routeParams', function(Movie, $scope, $routeParams) {
-    
-
     $scope.movie = Movie.get({id: $routeParams.id }, function(movie) {
       // Probably do something cool in here with the returned movie data.
-    })
+    });
     // $scope.movieId = $routeParams.movieId;
 }]);
 
 // Eventually this will all be abstracted out into a generic controller that all calls can use.
+
+catagorizerControllers.controller('ItemDetailCtrl', ['$scope', '$routeParams', 'Item',
+  function($scope, $routeParams, Item){
+    //Generic controller maybe hopefully
+    $scope.media = Item.get({ category: $routeParams.category, id: $routeParams.id }, function(category){
+      // Something cool can go here
+    });
+  }
+]);
